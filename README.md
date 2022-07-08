@@ -1,24 +1,30 @@
 # LIFE Pass
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+現代社会はそれ以前の社会と比べ特に変化が早く、あらゆるものが変化して行っています。それに伴って人の人生に対する課題、問題、悩みなども多種多様なものになっています。LIFE Passはそれらを乗り越えた人の知恵やテクニックを共有し、今を生きる人たちがより生きやすくなること（参考となること）を目的としたサイトです。
 
-Things you may want to cover:
+### サイトテーマ
+LIFE Pass
 
-* Ruby version
+### テーマを選んだ理由
+現代社会はそれ以前の社会と比べ特に変化が早く、あらゆるものが変化して行っている。それに伴って人の人生に対する課題、問題、悩みなども多種多様なものになっている。れらを乗り越えた人の知恵やテクニックを共有し、今を生きる人たちがより生きやすくなればと思ったから。
 
-* System dependencies
+### ターゲットユーザ
+全ての世代
 
-* Configuration
+### 主な利用シーン
+人生で課題、問題、悩みなどを抱えた時
 
-* Database creation
+## 設計書
+<...>
 
-* Database initialization
+## 開発環境
+- OS：Linux(CentOS)
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JSライブラリ：jQuery
+- IDE：Cloud9
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 使用素材
+- 外部サービスの画像素材・音声素材を使用した場合は、必ずサービス名とURLを明記してください。
+- 使用しない場合は、使用素材の項目をREADMEから削除してください。
