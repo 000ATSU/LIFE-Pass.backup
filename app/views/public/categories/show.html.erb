@@ -1,0 +1,21 @@
+<div>
+  <div>
+    <h1><%= @category.category_name %>の投稿一覧</h1>
+  </div>
+  <div>
+    <table>
+    <% @posts.each do |post| %>
+      <tr>
+        <th><%= post.post_title %></th>
+      </tr>
+      <tr>
+        <td><%= post.post_text.truncate(30) %>...</td>
+      </tr>
+      <tr>
+        <td><%= post.user.user_name %></td>
+        <td><%= link_to "もっと見る", post_path(post.id)%></td>
+      </tr>
+    <% end %>
+    </table>
+  </div>
+</div>

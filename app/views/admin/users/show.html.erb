@@ -1,0 +1,28 @@
+<div>
+  <div>
+    <h1><%= @user.user_name %></h1>
+    <h3><%= @user.posts.count %>📬</h3>
+    <h3><%= @user.favorites.count %>💕</h3>
+  </div>
+  <div>
+    <table>
+    <% @posts.each do |post| %>
+      <tr>
+        <th><%= post.post_title %></th>
+      </tr>
+      <tr>
+        <td><%= post.post_text.truncate(30) %>...</td>
+      </tr>
+      <tr>
+        <td><%= post.user.user_name %></td>
+        <td>
+          <%= link_to "もっと見る", admin_post_path(post.id) %>
+        </td>
+      </tr>
+    <% end %>
+    </table>
+  </div>
+  <div>
+    <%= paginate @posts %>
+  </div>
+</div>

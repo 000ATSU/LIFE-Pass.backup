@@ -1,0 +1,31 @@
+<div>
+  <div>
+    <h3>いいね獲得ランキング</h3>
+    <%=  %>
+      第<%= i %>位
+      <%= user.user_name %>
+    <% end %>
+  </div>
+  <div>
+    <table>
+    <% @posts.each do |post| %>
+      <tr>
+        <th><%= post.post_title %></th>
+      </tr>
+      <tr>
+        <td><%= post.post_text.truncate(30) %>...</td>
+      </tr>
+      <tr>
+        <td><%= post.user.user_name %></td>
+        <td>
+          <%= link_to "もっと見る", user_signed_in? ? post_path(post.id) : new_user_registration_path %>
+        </td>
+      </tr>
+    <% end %>
+    </table>
+  </div>
+  <div>
+    <%= paginate @posts %>
+  </div>
+</div>
+

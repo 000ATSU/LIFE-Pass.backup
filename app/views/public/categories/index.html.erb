@@ -1,0 +1,17 @@
+<div>
+  <h2>カテゴリ一覧</h2>
+  <h4>カテゴリ名をクリックするとそのカテゴリの一覧を見ることが出来ます！！</h4>
+  <table>
+    <tr>
+    <% @categories.each do |category| %>
+      <th>
+        <%= link_to category_path(category) do %>
+          <%= category.category_name %>
+        <% end %>
+      </th>
+      <th></th>
+      <th></th>
+    <% end %>
+    </tr>
+  </table>
+</div>

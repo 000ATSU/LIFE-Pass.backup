@@ -9,6 +9,54 @@
   </head>
 
   <body>
+    <header>
+      <div>
+        <%= link_to "LIFE Pass", root_path %>
+      </div>
+      <% if user_signed_in? %>
+      <div>
+        <div>
+          <%= render 'public/posts/serach' %>
+        </div>
+        <div>
+          <%= link_to "投稿する", new_post_path %>
+        </div>
+        <div>
+          <%= link_to "マイページ", users_path(current_user.id) %>
+        </div>
+        <div>
+          <%= link_to "カテゴリ一覧", categories_path %>
+        </div>
+        <div>
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+        </div>
+      </div>
+      <% elsif admin_signed_in? %>
+      <div>
+        <div>
+          <%= link_to "カテゴリ一覧", admin_categories_path %>
+        </div>
+        <div>
+          <%= link_to "会員一覧", admin_users_path %>
+        </div>
+        <div>
+          <%= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
+        </div>
+      </div>
+      <% else %>
+      <div>
+        <div>
+          <%= link_to "LIFE Passって？", about_path %>
+        </div>
+        <div>
+          <%= link_to "ログイン", new_user_session_path %>
+        </div>
+        <div>
+          <%= link_to "サインアップ", new_user_registration_path %>
+        </div>
+      </div>
+      <% end %>
+    </header>
     <%= yield %>
   </body>
 </html>

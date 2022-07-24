@@ -1,0 +1,2 @@
+module Publuc::SearchesHelper
+end

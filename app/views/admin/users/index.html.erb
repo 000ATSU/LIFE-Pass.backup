@@ -1,0 +1,27 @@
+<div>
+  <table>
+  <% @users.each do |user| %>
+    <tr>
+      <th>ユーザーネーム</th>
+      <td>
+      <%= link_to admin_user_path(user.id) do %>
+        <%= user.user_name %>
+      <% end %>
+      </td>
+      <td></td>
+      <th>最終ログイン</th>
+      <td><%= l user.last_sign_in_at, format: :short %></td>
+      <td></td>
+      <th>投稿数</th>
+      <td><%= user.posts.count %></td>
+      <td></td>
+      <th>アカウント作成日時</th>
+      <td><%= l user.created_at, format: :short %></td>
+    </tr>
+  <% end %>
+  </table>
+  <div>
+    <%= paginate @users %>
+  </div>
+</div>
+

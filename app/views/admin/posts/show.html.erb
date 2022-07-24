@@ -1,0 +1,10 @@
+<div>
+  <div>
+    <h1><%= @post.post_title %></h1>
+    <h4><%= @post.post_text %></h4>
+    <h4><%= @post.user.user_name %></h4>
+  </div>
+  <div>
+    <%= link_to "投稿を削除する", admin_post_path, method: :delete, data: { confirm: "本当に削除しますか？" } %>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<div>
+  <%= form_with model: @post, url: posts_path do |f| %>
+  <table>
+    <tr>
+      <th>タイトル</th>
+      <td><%= f.text_field :post_title, required: true %></td>
+    </tr>
+    <tr>
+      <th>投稿文</th>
+      <td><%= f.text_area :post_text, required: true %></td>
+    </tr>
+    <tr>
+      <th>カテゴリ</th>
+      <td><%= f.collection_select :category_id, Category.all, :id, :category_name, include_blank: "選択して下さい" %></td>
+    </tr>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+    <tr>
+      <td><%= f.submit '投稿する' %></td>
+    </tr>
+  </table>
+  <% end %>
+</div>
