@@ -12,7 +12,7 @@
         <td><%= bookmark.post.post_text.truncate(30)... %></td>
       </tr>
       <tr>
-        <td><%= bookmark.user.user_name %></td>
+        <td><%= bookmark.post.user.user_name %></td>
         <td><%= link_to "もっと見る", post_path(bookmark.post)%></td>
       </tr>
     <% end %>

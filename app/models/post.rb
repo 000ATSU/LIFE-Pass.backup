@@ -13,7 +13,8 @@ class Post < ApplicationRecord
     bookmarks.exists?(user_id: user.id)
   end
 
-  def self.search(keyword)
+  def Post.search(keyword)
+    
     where(["post_title like? OR post_text like?", "%#{keyword}%", "%#{keyword}%"])
   end
 
