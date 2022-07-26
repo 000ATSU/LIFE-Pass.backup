@@ -1,7 +1,7 @@
 <div>
   <h1><%= @user.user_name %></h1>
   <h3><%= @user.posts.count %>投稿📬</h3>
-  <h3><%= @user.favorites.count %>いいね💕</h3>
+  <h3><%= @get_favorite.count %>いいね💕</h3>
   <h3>
     <% if current_user == @user %>
       <%= link_to "ブックマーク一覧へ📖", user_path(@user.id)%>

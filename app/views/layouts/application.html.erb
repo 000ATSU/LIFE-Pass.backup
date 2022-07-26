@@ -16,6 +16,9 @@
       <% if user_signed_in? %>
       <div>
         <div>
+          Hello!!<%= current_user.user_name %>
+        </div>
+        <div>
           <%= render 'public/posts/serach' %>
         </div>
         <div>
