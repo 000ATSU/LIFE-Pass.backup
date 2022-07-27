@@ -2,6 +2,14 @@
   <div>
     <h3>いいね獲得ランキング</h3>
     <div>
+    <% @ranks.each.with_index(1) do |rank, i| %>
+      <% if i == 6 %>
+        <% break %>
+      <% else %>
+        第<%= i %>位
+        <%= rank.user_name %>
+      <% end %>
+    <% end %>
     </div>
   </div>
   <div>

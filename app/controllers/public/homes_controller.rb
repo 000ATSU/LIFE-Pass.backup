@@ -1,12 +1,11 @@
 class Public::HomesController < ApplicationController
   def top
     @posts = Post.page(params[:page]).per(6)
-    @users = User.all
-    @rank = @users.map do |user|
-      user.favorites.count
+    rank = {}
+    User.all.each do |user|
+      rank.store(user, Favorite.where(post_id: user.posts.ids).count)
     end
-    # @rank = Favorite.group(:post_id).order('count(post_id) desc').limit(5)
-    # @rank.each {|v| v.user.user_name}
+    @ranks = rank.sort_by { |_, v| v }.reverse.to_h.keys
     # binding.pry
   end
 
