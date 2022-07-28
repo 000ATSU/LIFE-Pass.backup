@@ -3,14 +3,21 @@
   <table>
     <tr>
       <th>タイトル</th>
+    </tr>
+    <tr>
       <td><%= f.text_field :post_title, required: true %></td>
     </tr>
     <tr>
       <th>投稿文</th>
+      <td>投稿文は250字以内です</td>
+    </tr>
+    <tr>
       <td><%= f.text_area :post_text, required: true %></td>
     </tr>
     <tr>
       <th>カテゴリ</th>
+    </tr>
+    <tr>
       <td><%= f.collection_select :category_id, Category.all, :id, :category_name, include_blank: "選択して下さい" %></td>
     </tr>
     <%= f.hidden_field :user_id, :value => current_user.id %>

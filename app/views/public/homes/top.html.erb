@@ -24,7 +24,7 @@
       <tr>
         <td><%= post.user.user_name %></td>
         <td>
-          <%= link_to "もっと見る", user_signed_in? ? post_path(post.id) : new_user_registration_path %>
+          <%= link_to "もっと見る",  post_path(post.id) %>
         </td>
       </tr>
     <% end %>

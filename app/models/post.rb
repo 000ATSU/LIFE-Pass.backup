@@ -1,5 +1,8 @@
 class Post < ApplicationRecord
 
+  validates :post_title, presence: true
+  validates :post_text, presence: true, length: {maximum: 250}
+
   belongs_to :user
   belongs_to :category
   has_many :favorites, dependent: :destroy
@@ -14,7 +17,7 @@ class Post < ApplicationRecord
   end
 
   def Post.search(keyword)
-    
+
     where(["post_title like? OR post_text like?", "%#{keyword}%", "%#{keyword}%"])
   end
 
