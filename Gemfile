@@ -58,3 +58,4 @@ end
   gem 'devise'
   gem 'kaminari'
   gem 'pry-rails'
+  gem 'webpacker', github: "rails/webpacker"
